@@ -23,3 +23,20 @@ for(int[] dir : direction){
 - lc 815 bus routes
 这道题我的解决思路还是比较直接， 需要注意的一个问题是判断路径的重合
 速度如何进一步优化， 其他题解的学习。
+和高票的本质不同， 使用bus stop 来进行BFS还是用bus route进行。
+优化点： 1 记录stop -> route 的关系， 避免每次进行遍历
+        2 由于站点数远多于路线数， 因此记录visited stop 也可以大大的优化运行时间
+附代码如下
+```java
+private void addToQueue(List<Integer> list, boolean[] visited, Queue<Integer> queue){
+        for(int i : list){
+            if(visited[i]){
+                continue;
+            }
+            queue.add(i);
+            visited[i] = true;
+
+        }
+        
+    }
+```
