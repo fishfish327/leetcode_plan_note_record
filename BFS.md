@@ -66,5 +66,28 @@ private void dfs(char[][] board, int colIndex)
         }
 	}
 ```
+##### lc 261 graph valid tree
+- 我的解法： 无向图是否为树的判定： 无环 + 连通， BFS遍历节点
+- 高票 union find 解法
+```java
+public boolean validTree(int n, int[] edges){
+// init 用一维数组来表示点点之间的关系
+int[] nums = new int[n];
+Arrays.fill(nums, -1);
+// perform union find
+for(int[] edge : edges){
+    int a = find(nums, edge[0]);
+    int b = find(nums, edge[1]);
+    if(a == b) return false;
+    nums[a] = b;
+}
+// 通过边的数量加以验证
+return edges.length == n - 1;
+}
+private int find(int nums, int i){
+    if(nums[i] == -1) return i;
+    return find(nums, nums[i]);
+}
+``` 
 
 
