@@ -40,3 +40,31 @@ private void addToQueue(List<Integer> list, boolean[] visited, Queue<Integer> qu
         
     }
 ```
+- lc 847 Shortest path visited all path
+ 首次回答 可否做出？ 不能、无法套用BFS
+ dp 和位运算的结合， 待进一步学习
+
+#####  lc 773 sliding puzzle 
+- 无法首次回答
+- 这道题的关键是如何表示状态， 高票中把棋盘压缩成字符串是个高效的做法
+#####  由上一道的棋盘问题， 回顾 N-queens 问题
+- 使用borad 记录棋盘状态， backtracking 进行状态回退
+```java
+private void dfs(char[][] board, int colIndex)
+	{
+		if(colIndex == board.length){
+            res.add(construct(board));
+            return;
+        }
+        for(int i = 0; i < board.length; i++){
+            if(validate(board, i, colIndex)){
+                board[i][colIndex] = 'Q';
+                dfs(board, colIndex + 1);
+                board[i][colIndex] = '.';
+            }
+            
+        }
+	}
+```
+
+
