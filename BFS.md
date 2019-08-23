@@ -89,5 +89,20 @@ private int find(int nums, int i){
     return find(nums, nums[i]);
 }
 ``` 
+- DFS 解法， 注意环的判定方法， 思考： tree 的递归和DFS的联系
+```java
+boolean hasCycle(List<List<Integer>> adjList, int u, boolean[] visited, int parent]){
+    visited[u] = true;
+    for(int i =0; i < adjList.get(u).size(); i++){
+        int v = adjList.get(u).get(i);
+        if(
+            (visited[v] && parent != v) ||
+            (!visited[v] && hasCycle(adjList, v, visited, u))
+        )
+        return true;
+    }
+    return false;
+}
+```
 
 
