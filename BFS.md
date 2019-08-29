@@ -104,5 +104,6 @@ boolean hasCycle(List<List<Integer>> adjList, int u, boolean[] visited, int pare
     return false;
 }
 ```
-
-
+##### 286 walls and gates , BFS 模板题型
+##### 42 trapping rain watter
+- 将计算转换为计算单个区间， 寻找left max 和 right max 

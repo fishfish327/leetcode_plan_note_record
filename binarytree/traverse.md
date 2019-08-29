@@ -11,6 +11,7 @@ public int largestBSTSubtree(TreeNode root) {
             return Math.max(l , r);
     }
 ```
+- 回顾： 将bst 判断 和 subtree计算分解成小的function
 - lc 971 Flip Binary Tree To Match Preorder Traversal
 - 典型中序遍历 ， 数组按序访问即可， 其中一个test case挂掉表明， 需要检查左子树是否挂掉来确定下一步。
 ```java

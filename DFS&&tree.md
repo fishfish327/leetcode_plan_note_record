@@ -124,3 +124,14 @@ public int longestIncreasingPath(int[][] matrix) {
 ```
 ##### 133 clone graph
 - 深拷贝问题， map 的典型应用
+##### 472 Concatenated Words
+- 注意的问题： substr不在words里面的时候不进行dfs
+- 题解参考： 结合Tries
+##### 652 duplicated tree
+- 这道题在遍历的思路上可以使用DFS, 记录之前的遇到过的子状态， 问题的突破点在于如何记录， 记录什么
+- 解法参考： 将数序列化
+
+##### 272 k close value
+- 树的遍历
+- 参考解法1： 使用pq
+- 参考解法2： linkedList, 先把list填满， 然后poll出不符合条件的
