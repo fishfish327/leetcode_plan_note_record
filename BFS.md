@@ -84,7 +84,7 @@ for(int[] edge : edges){
 // 通过边的数量加以验证
 return edges.length == n - 1;
 }
-private int find(int nums, int i){
+private int find(int[] nums, int i){
     if(nums[i] == -1) return i;
     return find(nums, nums[i]);
 }

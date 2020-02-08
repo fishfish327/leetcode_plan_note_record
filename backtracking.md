@@ -20,3 +20,8 @@ private boolean backtracking(char[][] board){
         return true;
     }
 ```
+
+##### word pattern
+- 基本思路： 尝试所以可能长度的匹配方案，失败则回退
+- 注意： 区分失败， 和跳过， 遇到重复的str时应该跳过而不是直接return false。 
+- api: String.startsWith(index, str)
